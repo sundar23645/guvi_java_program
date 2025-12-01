@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		String s1=sc.next();
+		String s2=sc.next();
+		StringBuilder a=new StringBuilder(s1);
+		StringBuilder b=new StringBuilder(s2);
+		boolean f=false;
+		for(int i=0; i<a.length(); i++) {
+			char x=a.charAt(i);
+			for(int j=0; j<b.length(); j++) {
+				char y=b.charAt(j);
+				if(x==y) {
+					f=true;
+					a.deleteCharAt(i);
+					i--;
+					break;
+
+				}
+			}
+
+		}
+		if(a.length()==0)
+		{
+			System.out.print("-1");
+		}
+		else System.out.print(a);
+	}
+
+}
